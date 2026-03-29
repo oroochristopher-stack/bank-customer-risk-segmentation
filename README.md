@@ -25,7 +25,6 @@ Customers with low credit scores have higher default rates and higher expected l
 ## Actuarial Interpretation
 Expected Loss = Probability of Default × Loan Exposure
 
-This model can help banks price loans and manage credit risk.
 
 This model can help banks price loans and manage credit risk.
 
