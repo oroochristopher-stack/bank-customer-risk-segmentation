@@ -25,6 +25,11 @@ Customers with low credit scores have higher default rates and higher expected l
 ## Actuarial Interpretation
 Expected Loss = Probability of Default × Loan Exposure
 
-
 This model can help banks price loans and manage credit risk.
 
+## How to Use: "Run queries.sql on the provided data.csv to reproduce these segments".
+
+Step 1: Segment customers into Risk Tiers (Low, Medium, High) using a CASE statement on credit history or income.
+Step 2: Calculate the Average Default Rate for each tier.
+Step 3: Apply the Expected Loss formula ( Probability of Default * Loan Amount ) for each segment.
+Step 4: Recommend which segments the bank should target for higher interest rates or stricter approval.
