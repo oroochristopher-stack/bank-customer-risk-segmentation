@@ -27,6 +27,13 @@ Expected Loss = Probability of Default × Loan Exposure
 
 This model can help banks price loans and manage credit risk.
 
+## Data Engineering & Integrity
+Analysis is performed in Google BigQuery to simulate a cloud-native environment.
+
+Upon ingesting the raw CSV into Google BigQuery, I identified that the Auto-detect schema incorrectly flagged certain numerical columns (person_emp_length, loan_int_rate) as nulls due to source formatting.
+
+My Solution: Instead of manually editing the source CSV, I built a SQL Cleaning Layer using SAFE_CAST and COALESCE. This ensures the analysis is reproducible and ready for production-scale data.
+
 ## How to Use: "Run queries.sql on the provided data.csv to reproduce these segments".
 
 Step 1: Segment customers into Risk Tiers (Low, Medium, High) using a CASE statement on credit history or income.
