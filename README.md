@@ -1,10 +1,10 @@
-# bank-customer-risk-segmentation
+# Bank-Customer-Risk-Segmentation
 SQL project analyzing customer risk and loan default exposure
 
 ## Business Problem
 The goal of this project is to segment bank customers based on credit risk and estimate expected loss per segment.
 
-## Dataset
+## Dataset *
 Bank customer dataset containing:
 * Customer ID
 * Credit Score
@@ -12,7 +12,7 @@ Bank customer dataset containing:
 * Default Status
 * Income
 
-## SQL Analysis
+## SQL Analysis *
 The following analysis was performed:
 * Customer segmentation by credit score
 * Default rate per segment
