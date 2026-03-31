@@ -28,7 +28,7 @@ Expected Loss = Probability of Default × Loan Exposure
 This model can help banks price loans and manage credit risk.
 
 ## Data Engineering & Integrity
-Analysis is performed in Google BigQuery to simulate a cloud-native environment.
+Analysis is performed in Google BigQuery to simulate a cloud-native environment. This is a single region project.
 
 Secure Connection: Successfully architected a Python-to-BigQuery bridge using OAuth 2.0 tokenization. Implemented explicit project-scoping to ensure data governance and billing accuracy.
 
