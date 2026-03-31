@@ -30,6 +30,10 @@ This model can help banks price loans and manage credit risk.
 ## Data Engineering & Integrity
 Analysis is performed in Google BigQuery to simulate a cloud-native environment.
 
+Secure Connection: Successfully architected a Python-to-BigQuery bridge using OAuth 2.0 tokenization. Implemented explicit project-scoping to ensure data governance and billing accuracy.
+
+Data Residency: All processing is restricted to the 'US' multi-region to ensure alignment with project-specific cloud architecture.
+
 Upon ingesting the raw CSV into Google BigQuery, I identified that the Auto-detect schema incorrectly flagged certain numerical columns (person_emp_length, loan_int_rate) as nulls due to source formatting.
 
 My Solution: Instead of manually editing the source CSV, I built a SQL Cleaning Layer using SAFE_CAST and COALESCE. This ensures the analysis is reproducible and ready for production-scale data.
