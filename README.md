@@ -1,10 +1,10 @@
 # Bank-Customer-Risk-Segmentation
 SQL project analyzing customer risk and loan default exposure
 
-## Business Problem
+## 1 Business Problem
 The goal of this project is to segment bank customers based on credit risk and estimate expected loss per segment.
 
-## Dataset *
+## 2 Dataset *
 Bank customer dataset containing:
 * Customer ID
 * Credit Score
@@ -12,22 +12,22 @@ Bank customer dataset containing:
 * Default Status
 * Income
 
-## SQL Analysis *
+## 3 SQL Analysis *
 The following analysis was performed:
 * Customer segmentation by credit score
 * Default rate per segment
 * Average loan exposure
 * High-risk customer identification
 
-## Risk Insights
+## 4 Risk Insights
 Customers with low credit scores have higher default rates and higher expected losses.
 
-## Actuarial Interpretation
+## 5 Actuarial Interpretation
 Expected Loss = Probability of Default × Loan Exposure
 
 This model can help banks price loans and manage credit risk.
 
-## Data Engineering & Integrity
+## 6  Data Engineering & Integrity
 Analysis is performed in Google BigQuery to simulate a cloud-native environment. This is a single region project.
 
 Secure Connection: Successfully architected a Python-to-BigQuery bridge using OAuth 2.0 tokenization. Implemented explicit project-scoping to ensure data governance and billing accuracy.
@@ -38,7 +38,15 @@ Upon ingesting the raw CSV into Google BigQuery, I identified that the Auto-dete
 
 My Solution: Instead of manually editing the source CSV, I built a SQL Cleaning Layer using SAFE_CAST and COALESCE. This ensures the analysis is reproducible and ready for production-scale data.
 
-## How to Use: "Run queries.sql on the provided data.csv to reproduce these segments".
+Analytical Methodology: Developed a multi-stage CTE pipeline to handle data imputation and risk-metric derivation, ensuring high auditability 
+Developed a tri-tier risk segmentation model based on LTI (Loan-to-Income) ratios to enable Risk-Based Pricing and optimize capital reserve requirements.
+
+### Optimization & Data Governance
+Boolean Normalization: During ingestion, I chose to maintain cb_person_default_on_file as a Native Boolean (TRUE/FALSE) rather than a String (Y/N).
+Value: This choice optimizes storage efficiency in the BigQuery environment and enables high-performance filtering for multi-million row risk simulations.
+
+
+## 7 How to Use: "Run queries.sql on the provided data.csv to reproduce these segments".
 
 Step 1: Segment customers into Risk Tiers (Low, Medium, High) using a CASE statement on credit history or income.
 Step 2: Calculate the Average Default Rate for each tier.
