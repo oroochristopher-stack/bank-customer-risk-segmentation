@@ -1,6 +1,6 @@
 # Bank-Customer-Risk-Segmentation
 SQL project analyzing customer risk and loan default exposure
-
+ * define the logic in banking behind it b4 getting technical*
 ## 1 Business Problem
 The goal of this project is to segment bank customers based on credit risk and estimate expected loss per segment.
 
