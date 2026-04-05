@@ -40,6 +40,8 @@ My Solution: Instead of manually editing the source CSV, I built a SQL Cleaning 
 
 Analytical Methodology: Developed a multi-stage CTE pipeline to handle data imputation and risk-metric derivation, ensuring high auditability 
 Developed a tri-tier risk segmentation model based on LTI (Loan-to-Income) ratios to enable Risk-Based Pricing and optimize capital reserve requirements.
+Optimized the data lifecycle by moving from raw storage to a Governed View Layer, implementing automated imputation
+Analyzed 3,116 imputed records against the original 29,465. Statistical parity in LTI (0.171 vs 0.170) and Default Rates (20.67% vs 21.94%) validates the use of Grade-level Median imputation as a non-biasing risk strategy in this context.
 
 ### Optimization & Data Governance
 Boolean Normalization: During ingestion, I chose to maintain cb_person_default_on_file as a Native Boolean (TRUE/FALSE) rather than a String (Y/N).
