@@ -70,7 +70,7 @@ Proactive Restructuring: Offer term extensions to debt-stressed Tier 2 renters t
 The Insight: The current portfolio is over-concentrated in "Flight Capital" (Renters).
 Recommendation: Increase the Expected Credit Loss (ECL) provisions for the Tier 2 Renter segment immediately. This ensures the bank has enough "Safety Cash" to survive the predicted 40% loss rate in this bucket.
 
-## Model Failure: The Grade-LTI Mismatch
+### Model Failure: The Grade-LTI Mismatch
 The Discovery: High-LTI ratios "override" high credit grades. Grade A borrowers with a Tier 3 LTI ratio exhibit a 66.3% PD, representing a critical mispricing of risk.
 Systemic Weakness: The legacy Grading system fails to account for Debt Capacity. A borrower with a perfect history (Grade A) but excessive debt (Tier 3) is 18x riskier than a Grade A borrower with low debt.
 The Recommendation: Implement a "Hard Stop" Override. Regardless of Credit Grade, any applicant with an LTI > 0.40 should be auto-rejected or manually audited.
