@@ -4,6 +4,12 @@ SQL project analyzing customer risk and loan default exposure
 ## 1 Business Problem
 The goal of this project is to segment bank customers based on credit risk and estimate expected loss per segment.
 
+## The Final Executive Summary
+Problem: The bank was operating with an 18% capital charge and losing money on 100% of its Tier 3 Renter segments.
+Action: Architected a tri-tier risk framework in BigQuery, implementing automated Triage and Feature Engineering (LTI, Default History Flags).
+Outcome: Quantified a system-wide Negative Risk Margin and designed a RAROC-optimized pricing strategy.
+Impact: Provided the strategy to trigger a $50M+ Capital Release as toxic stock runs off, shifting the bank toward a positive Net Interest Margin (NIM).
+
 ## 2 Dataset *
 Bank customer dataset containing:
 * Customer ID
@@ -75,6 +81,8 @@ The Discovery: High-LTI ratios "override" high credit grades. Grade A borrowers 
 Systemic Weakness: The legacy Grading system fails to account for Debt Capacity. A borrower with a perfect history (Grade A) but excessive debt (Tier 3) is 18x riskier than a Grade A borrower with low debt.
 The Recommendation: Implement a "Hard Stop" Override. Regardless of Credit Grade, any applicant with an LTI > 0.40 should be auto-rejected or manually audited.
 
+Quantified a systemic pricing failure where the bank is operating at a -58% Net Risk Margin in subprime segments. Developed a Risk-Adjusted Pricing Tier that restores positive NIM, effectively identifying segments that must be de-risked or exited to preserve bank solvency.
+Proposed a 0.30 LTI Underwriting Cap to optimize future profitability and trigger a long-term Capital Release of $50M+ as the current subprime 'Stock' runs off the balance sheet.
 
 
 ## 8 How to Use: "Run queries.sql on the provided data.csv to reproduce these segments".
