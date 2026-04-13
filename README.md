@@ -17,7 +17,10 @@ Bank customer dataset containing:
 * Loan Amount
 * Default Status
 * Income
-
+  
+## Data Reconnaissance
+Table list: loan_data, v_hardened_loans
+Total Raw Records: 32,581.
 ## 3 SQL Analysis *
 The following analysis was performed:
 * Customer segmentation by credit score
