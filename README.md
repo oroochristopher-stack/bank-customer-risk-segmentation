@@ -20,6 +20,8 @@ Bank customer dataset containing:
   
 ## Data Reconnaissance
 Table list: loan_data, v_hardened_loans
+the scripts/ should be run in numerical order.
+
 Total Raw Records: 32,581.
 ## 3 SQL Analysis *
 The following analysis was performed:
