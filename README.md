@@ -28,7 +28,18 @@
 *   **Validation:** Conducted a **Data Integrity Stress Test** on 3,116 imputed records. Statistical parity in LTI (0.171) and Default Rates (20.67% vs. 21.94%) validates the imputation as a **non-biasing strategy**.
 
 ---
+## 3. Data Integrity & Health Audit
+I performed a transparency audit on the 'Silver' layer to quantify the residual data quality gaps. 
 
+**Resulting Data Health Report:**
+| total_loans | null_interest_rows | null_emp_rows | pct_interest_gap |
+| :--- | :--- | :--- | :--- |
+| 32581 | 3116 | 895 | 9.56 |
+
+*   **Operational Interpretation:** The analysis reveals a **9.56% interest-rate documentation gap**. I have verified that this gap is statistically safe for grade-level median imputation.
+*   **Strategic Recommendation:** I recommend that the Data Operations team investigate the source extraction pipeline, as a 9.56% documentation failure rate is a significant operational risk that should be addressed at the root.
+
+---
 ## III. Financial Risk Insights
 ### **1. The "Insolvency Frontier"**
 The analysis reveals a **"Hard Wall"** for Renters at **0.40 LTI**. Beyond this point, default is a mathematical certainty (100% PD), making the segment un-priceable regardless of interest rates.
