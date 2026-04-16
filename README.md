@@ -52,6 +52,7 @@ The project is organized to follow the **Data Medallion Architecture**:
 *   `scripts/sql/`: Pure logic for data hardening, segmentation, and provisioning.
 *   `scripts/python/`: The automation engine, configuration, and cost-control gateway.
 *   `notebook/`: The full analytical narrative and "Head-to-Tail" execution.
+*   `reports/`: Houses the Excel Decision Sandbox and visual risk heatmaps.
 
 **To Reproduce Results:**
 1. Configure `scripts/python/config.py` with your GCP Project ID.
