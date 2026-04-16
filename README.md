@@ -22,6 +22,7 @@
 *   **Cost Control:** I have implemented a **50MB Safety Guardrail** and mandatory **Dry Run Audits** to ensure analytical cost-efficiency.
 
 ### **2. Data Triage & Hardening**
+*   **The Portfolio Baseline:** Anchored the ETL pipeline against a raw baseline of 32,581 loan records.
 *   **The 9.56% Gap:** Identified schema auto-detect errors in interest rates and employment length.
 *   **The Solution:** Built a **SQL Cleaning Layer (Silver View)** using `SAFE_CAST` and `COALESCE`. 
 *   **Validation:** Conducted a **Data Integrity Stress Test** on 3,116 imputed records. Statistical parity in LTI (0.171) and Default Rates (20.67% vs. 21.94%) validates the imputation as a **non-biasing strategy**.
