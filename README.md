@@ -28,7 +28,7 @@
 *   **Validation:** Conducted a **Data Integrity Stress Test** on 3,116 imputed records. Statistical parity in LTI (0.171) and Default Rates (20.67% vs. 21.94%) validates the imputation as a **non-biasing strategy**.
 
 ---
-## 3. Data Integrity & Health Audit
+## III. Data Integrity & Health Audit
 I performed a transparency audit on the 'Silver' layer to quantify the residual data quality gaps. 
 
 **Resulting Data Health Report:**
@@ -46,9 +46,13 @@ Successfully audited ETL integrity via a UNION ALL reconciliation, establishing 
 | Raw Source     | 32,581        |
 | Hardened View  | 32,581        |
 
-
 ---
-## III. Financial Risk Insights
+### 1. Data Governance: Imputation Integrity Audit
+I performed a comparative stress test between the Imputed (Gap) and Original (Clean) datasets to detect **Selection Bias**.
+*   **Result:** The 'Gap Group' and 'Clean Group' exhibit statistical parity in default rates (20.67% vs. 21.94%).
+*   **Conclusion:** The missing data is verified as **Missing At Random (MAR)**, confirming that grade-level median imputation is a non-biasing strategy for this portfolio.
+---
+## IV. Financial Risk Insights
 ### **1. The "Insolvency Frontier"**
 The analysis reveals a **"Hard Wall"** for Renters at **0.40 LTI**. Beyond this point, default is a mathematical certainty (100% PD), making the segment un-priceable regardless of interest rates.
 
