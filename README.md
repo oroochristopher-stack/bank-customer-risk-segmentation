@@ -59,24 +59,27 @@ The analysis reveals a **"Hard Wall"** for Renters at **0.40 LTI**. Beyond this 
 ### **2. The Grade-LTI Override**
 **Systemic Weakness:** I discovered that **Grade 'A' borrowers** with High-LTI ratios are **18x riskier** than Grade 'A' borrowers with low debt. This proves that credit history is secondary to current **Debt Capacity**.
 
-### **3. Board-Level Provisioning & Yield Report (Expected Loss)**
-**Business Goal:** Compare Interest Yield (`avg_int_rate`) versus the Cost of Risk (`loss_intensity`) to identify under-priced risk and calculate required Basel III capital provisions.
+### **3. Financial Modeling: Basel III Provisioning & Yield Audit**
+**Business Goal:** Compare Interest Yield vs. Cost of Risk (Loss Intensity) to quantify the bank’s capital reserve requirements and identify "Negative Spread" segments.
 
-**The Findings:**
-| risk_tier | customer_count | pd_percentage | capital_provision | avg_int_rate | loss_intensity |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| Tier 1: Low Risk (Prime) | 16,700 | 11.89% | $9,072,796 | 10.63% | 8.32% |
-| Tier 2: Medium Risk (Standard) | 14,695 | 28.84% | $36,875,126 | 11.39% | 20.19% |
-| Tier 3: High Risk (Subprime) | 1,186 | 74.62% | $10,826,990 | 11.71% | 52.23% |
+**The Capital Adequacy Report:**
 
-**Financial Interpretation:**
-*   **The Yield-Risk Gap:** In Tier 3, the average interest rate is **11.71%**, yet the Loss Intensity is **52.23%**. For every dollar lent, the bank effectively loses ~52 cents while only collecting ~12 cents in interest. The bank is operating at a severe negative risk-adjusted margin.
-*   **Concentration Risk:** While Tier 1 is the primary profit engine, Tier 2 requires a massive **$36.8M capital provision**. The bank is over-leveraged in this "Standard Risk" category, which is dragging down overall liquidity.
 
-**Strategic Recommendations:**
-1.  **Immediate Origination Moratorium:** Halt all new loan originations for Tier 3 (LTI > 0.40). No interest rate adjustment can mathematically compensate for a 74.62% PD and 52.23% Loss Intensity.
-2.  **Strategic Debt Restructuring:** For existing Tier 3 and stressed Tier 2 borrowers, implement a **Debt Consolidation Initiative**. By extending loan terms (e.g., 36 to 60 months), we mathematically force the LTI ratio down from >0.40 to <0.25. This migrates borrowers away from the "Default Frontier," potentially reducing PD by over 40% without writing off the principal.
-3.  **Pricing Floor Adjustment:** Establish a minimum interest rate floor of **15% for all Tier 2 loans** to offset the 20.19% Loss Intensity. The current 11.39% rate is failing to cover the bank’s cost of risk.
+| Risk Tier | Total Exposure | PD % | Required Reserves | Avg. Yield | Loss Intensity |
+| :--- | :--- | :---: | :---: | :---: | :---: |
+| **Tier 1 (Prime)** | $109M | 11.89% | **$9.07M** | 10.63% | 8.32% |
+| **Tier 2 (Standard)** | $182M | 28.84% | **$36.87M** | 11.39% | **20.19%** |
+| **Tier 3 (Subprime)** | $20.7M | 74.62% | **$10.82M** | 11.71% | **52.23%** |
+
+**Strategic Risk Insights:**
+*   **The Yield-to-Loss Deficit:** The portfolio is suffering from a systemic **Negative Spread**. In Tier 2, the bank charges an 11.39% yield but faces a **20.19% Loss Intensity**, creating an **8.8% net leak** on every dollar lent.
+*   **The Capital Trap:** Tier 2 alone consumes **$36.8M in Required Reserves**. This is "trapped capital" that cannot be reinvested, significantly lowering the bank's Return on Equity (ROE).
+*   **Subprime Insolvency:** With a **52.23% Loss Intensity**, Tier 3 is a "Value Destroyer." The 11.71% interest rate is mathematically incapable of covering the principal decay.
+
+**Actionable Outcomes:**
+1.  **Pricing Floor Adjustment:** Immediately implement an **Interest Rate Floor of 22%** for Tier 2 loans to offset the cost of risk and capital charges.
+2.  **Tier 3 "Rescue" Extensions:** Halt new Tier 3 originations. For existing accounts, offer **Term Extensions** to lower LTI ratios and migrate borrowers toward Tier 2 stability.
+3.  **Capital Pivot:** Aggressively expand **Tier 1 volume**. As the only segment where Yield > Loss, this is the bank's only true engine for restoring its Net Interest Margin (NIM).
 
 ### **4. Multivariate Risk Discovery: The "Collateral Buffer"**
 By cross-tabulating **LTI Risk Tiers** against **Home Ownership**, I uncovered a severe concentration of risk specifically tied to Renters, while identifying a hyper-stable "Safe Harbor" in Homeowners.
