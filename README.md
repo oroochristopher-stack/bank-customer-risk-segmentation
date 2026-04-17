@@ -146,6 +146,18 @@ By isolating **Tier 3 Renters**, I performed a forensic audit to determine if th
 **Unified Renter Risk Pricing & NIM Restoration:**
 To restore a 2% Net Interest Margin (NIM), the bank must transition from "flat" interest rates to a **Collateral-Adjusted Pricing Floor**. I recommend implementing a mandatory **15% "Unsecured Surcharge"** for all non-homeowners: this would move **Tier 1 Renters to a 13.24% floor** and **Tier 2 Renters to a ~29.9% target rate**. If a 30% interest rate is deemed uncompetitive or not market-viable, the bank must immediately **cease lending to Tier 2 Renters**, as any rate below this threshold represents a guaranteed erosion of bank capital.
 
+#### ** Portfolio Restoration Strategy: The NIM Recovery Plan**
+
+To restore the bank's **Net Interest Margin (NIM)** and protect core capital, I have architected a three-pillar remediation strategy:
+
+1.  **Elimination (Non-Viable Segments):** 
+    Immediately cease all lending to **Tier 3 Renters**. The analysis proves that the **Cost of Risk (70%)** far exceeds any legal or market-viable interest rate, making this segment a guaranteed capital drain.
+    
+2.  **Repricing (Margin Correction):** 
+    Implement an immediate pricing floor for **Tier 1 Renters**. Currently operating at a negative margin, these loans must be repriced to at least **13.24%** to cover the cost of risk and achieve a 2% profit buffer.
+    
+3.  **Filtering (Risk Migration Control):** 
+    Implement a **Hard LTI Cap of 0.35**. This acts as a "Circuit Breaker" to prevent stable "Standard" loans from drifting into high-default "Subprime" behavior, ensuring long-term portfolio stability.
 
 
 ---
