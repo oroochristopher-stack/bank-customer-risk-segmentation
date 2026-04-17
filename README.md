@@ -105,6 +105,29 @@ I tested the bank's traditional Credit Grades (A-G) to see if they accurately pr
 
 **Actionable Outcome:** Recommended a "Hard Stop" rule for the underwriting software. Regardless of a perfect Credit Grade, any applicant with an LTI > 0.40 must be automatically rejected to protect the bank's capital. I also recommended phasing out Grades D-G entirely.
 
+### **6. Root Cause Analysis: The "Intent" Illusion**
+By isolating **Tier 3 Renters**, I performed a forensic audit to determine if the "Purpose" of a loan (Loan Intent) provides any risk mitigation. The results exposed a systemic failure where debt-stress overrides all other variables.
+
+**The Findings:**
+
+| Loan Intent | Total Loans | Default Rate (PD) | Avg. LTI Ratio | Status |
+| :--- | :---: | :---: | :---: | :--- |
+| **Medical** | 169 | **100.00%** | 0.466 | 🔴 Toxic |
+| **Debt Consolidation** | 132 | **100.00%** | 0.471 | 🔴 Toxic |
+| **Home Improvement** | 75 | **100.00%** | 0.478 | ⚠️ Potential Fraud |
+| **Education / Venture** | 254 | **100.00%** | 0.472 | 🔴 Toxic |
+
+**Strategic Insights & Actionable Outcomes:**
+*   **The Debt Stress Threshold:** Analysis confirms that once a Renter reaches an **LTI of ~0.47**, the "Intent" of the loan becomes irrelevant. The borrower’s mathematical capacity to repay is fundamentally broken, leading to a **100% default correlation** regardless of the loan's purpose.
+*   **The "Home Improvement" Paradox (Fraud Alert):** I identified **75 "Home Improvement" loans** issued to Renters that resulted in a 100% loss. Statistically, tenants do not invest an average of **$17,600** into properties they do not own. This represents a significant failure in the **Verification of Assets (VOA)** process and suggests systemic occupancy fraud.
+*   **The Provisioning Hit:** The 100% default rate across this **$12.5M segment** indicates these assets are unrecoverable. I have recommended reclassifying this from an "Expected Loss" to a **Realized Loss (Write-off)** to reflect the true state of the bank's liquidity.
+
+**Strategic Mandate:**
+1.  **Forensic Fraud Audit:** Immediately investigate the "Home Improvement" Renter segment for misrepresentation at the point of entry.
+2.  **Intent-Neutral Underwriting:** For high-LTI applicants, the bank must ignore "Loan Intent" entirely and switch to a **Strict Capacity-Based Model**.
+3.  **LTI "Hard-Stop":** Implement an automated rejection for any Renter applicant exceeding a **0.35 LTI**, as this represents the "Insolvency Frontier" for the portfolio.
+
+
 
 ---
 
