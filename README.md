@@ -59,6 +59,24 @@ The analysis reveals a **"Hard Wall"** for Renters at **0.40 LTI**. Beyond this 
 ### **2. The Grade-LTI Override**
 **Systemic Weakness:** I discovered that **Grade 'A' borrowers** with High-LTI ratios are **18x riskier** than Grade 'A' borrowers with low debt. This proves that credit history is secondary to current **Debt Capacity**.
 
+### **3. Board-Level Provisioning & Yield Report (Expected Loss)**
+**Business Goal:** Compare Interest Yield (`avg_int_rate`) versus the Cost of Risk (`loss_intensity`) to identify under-priced risk and calculate required Basel III capital provisions.
+
+**The Findings:**
+| risk_tier | customer_count | pd_percentage | capital_provision | avg_int_rate | loss_intensity |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Tier 1: Low Risk (Prime) | 16,700 | 11.89% | $9,072,796 | 10.63% | 8.32% |
+| Tier 2: Medium Risk (Standard) | 14,695 | 28.84% | $36,875,126 | 11.39% | 20.19% |
+| Tier 3: High Risk (Subprime) | 1,186 | 74.62% | $10,826,990 | 11.71% | 52.23% |
+
+**Financial Interpretation:**
+*   **The Yield-Risk Gap:** In Tier 3, the average interest rate is **11.71%**, yet the Loss Intensity is **52.23%**. For every dollar lent, the bank effectively loses ~52 cents while only collecting ~12 cents in interest. The bank is operating at a severe negative risk-adjusted margin.
+*   **Concentration Risk:** While Tier 1 is the primary profit engine, Tier 2 requires a massive **$36.8M capital provision**. The bank is over-leveraged in this "Standard Risk" category, which is dragging down overall liquidity.
+
+**Strategic Recommendations:**
+1.  **Immediate Origination Moratorium:** Halt all new loan originations for Tier 3 (LTI > 0.40). No interest rate adjustment can mathematically compensate for a 74.62% PD and 52.23% Loss Intensity.
+2.  **Strategic Debt Restructuring:** For existing Tier 3 and stressed Tier 2 borrowers, implement a **Debt Consolidation Initiative**. By extending loan terms (e.g., 36 to 60 months), we mathematically force the LTI ratio down from >0.40 to <0.25. This migrates borrowers away from the "Default Frontier," potentially reducing PD by over 40% without writing off the principal.
+3.  **Pricing Floor Adjustment:** Establish a minimum interest rate floor of **15% for all Tier 2 loans** to offset the 20.19% Loss Intensity. The current 11.39% rate is failing to cover the bank’s cost of risk.
 ---
 
 ## IV. Strategic Recommendations
