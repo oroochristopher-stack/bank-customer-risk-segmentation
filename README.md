@@ -77,9 +77,29 @@ The analysis reveals a **"Hard Wall"** for Renters at **0.40 LTI**. Beyond this 
 1.  **Immediate Origination Moratorium:** Halt all new loan originations for Tier 3 (LTI > 0.40). No interest rate adjustment can mathematically compensate for a 74.62% PD and 52.23% Loss Intensity.
 2.  **Strategic Debt Restructuring:** For existing Tier 3 and stressed Tier 2 borrowers, implement a **Debt Consolidation Initiative**. By extending loan terms (e.g., 36 to 60 months), we mathematically force the LTI ratio down from >0.40 to <0.25. This migrates borrowers away from the "Default Frontier," potentially reducing PD by over 40% without writing off the principal.
 3.  **Pricing Floor Adjustment:** Establish a minimum interest rate floor of **15% for all Tier 2 loans** to offset the 20.19% Loss Intensity. The current 11.39% rate is failing to cover the bank’s cost of risk.
+
+### **4. Multivariate Risk Discovery: The "Collateral Buffer"**
+By cross-tabulating **LTI Risk Tiers** against **Home Ownership**, I uncovered a severe concentration of risk specifically tied to Renters, while identifying a hyper-stable "Safe Harbor" in Homeowners.
+
+**The Findings:**
+
+| Risk Tier | Ownership | Customer Volume | Default Rate (PD) | Exposure at Risk |
+| :--- | :--- | :--- | :--- | :--- |
+| **Tier 3 (Subprime)** | **RENT** | 754 | **100.00%** | **$12.57M** |
+| **Tier 2 (Standard)** | **RENT** | 8,040 | **39.91%** | **$90.04M** |
+| **Tier 2 (Standard)** | **MORTGAGE** | 5,309 | **16.12%** | $77.84M |
+| **Tier 1 (Prime)** | **OWN** | 1,162 | **0.95%** | $7.28M |
+
+**Strategic Insights & Actionable Outcomes:**
+*   **The Renter "Death Zone":** Analysis identifies a **100% historical default correlation** for Tier 3 Renters. This represents **$12.5M in guaranteed loss**, proving that extreme leverage (LTI > 0.40) without tangible assets leads to total principal loss. 
+*   **The Systemic Threat:** Tier 2 Renters represent the bank's largest "Hidden Fire," with a **39.9% default rate** across a massive **$90M exposure**. This segment is the primary driver of the bank's negative risk-adjusted margin.
+*   **The Collateral Buffer:** Homeownership acts as a profound risk mitigant. Outright Owners in Tier 1 display an ultra-stable **0.95% default rate**, while Tier 2 Mortgage holders default at less than half the rate of their Renter counterparts (16.1% vs 39.9%).
+*   **Policy Pivot:** I proposed a **Dual-Track Underwriting Policy**: Implement a strict **0.30 LTI cap for Renters** to halt losses, while aggressively expanding LTI limits (up to 0.45) for **Homeowners** to capture high-quality, collateral-backed volume.
+
+
 ---
 
-## IV. Strategic Recommendations
+## V. Strategic Recommendations
 ### **1. Underwriting Policy Shift**
 *   **Recommend implementing a Hard LTI Cap of 0.30 for Renters** to protect bank solvency.
 *   **Mandate a "Hard Stop" Override:** Regardless of Credit Grade, any applicant with an **LTI > 0.40** must be auto-rejected.
@@ -89,7 +109,7 @@ The analysis reveals a **"Hard Wall"** for Renters at **0.40 LTI**. Beyond this 
 
 ---
 
-## V. Repository Structure & Reproducibility
+## VI. Repository Structure & Reproducibility
 The project is organized to follow the **Data Medallion Architecture**:
 *   `scripts/sql/`: Pure logic for data hardening, segmentation, and provisioning.
 *   `scripts/python/`: The automation engine, configuration, and cost-control gateway.
