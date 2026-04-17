@@ -130,6 +130,22 @@ By isolating **Tier 3 Renters**, I performed a forensic audit to determine if th
 2.  **Intent-Neutral Underwriting:** For high-LTI applicants, the bank must ignore "Loan Intent" entirely and switch to a **Strict Capacity-Based Model**.
 3.  **LTI "Hard-Stop":** Implement an automated rejection for any Renter applicant exceeding a **0.35 LTI**, as this represents the "Insolvency Frontier" for the portfolio.
 
+### **7. Pricing Optimization: Restoring Net Interest Margin (NIM)**
+**Business Goal:** Identify "Value-Destructive" segments and calculate the Risk-Adjusted Pricing floors required to achieve a 2% profit buffer above the cost of risk (Basel III LGD=0.70).
+
+**The Strategic Pricing Audit:**
+
+
+| Risk Tier | Ownership | Current Rate | Cost of Risk | Net Margin | **Recommended Target** |
+| :--- | :--- | :---: | :---: | :---: | :---: |
+| **Tier 3** | **RENT** | 11.90% | 70.00% | **-58.10%** | **EXIT** |
+| **Tier 2** | **RENT** | 11.70% | 27.94% | **-16.24%** | **29.94%** |
+| **Tier 2** | **MORTGAGE**| 10.96% | 11.29% | -0.33% | 13.29% |
+| **Tier 1** | **RENT** | 11.14% | 11.24% | -0.10% | 13.24% |
+
+**Unified Renter Risk Pricing & NIM Restoration:**
+To restore a 2% Net Interest Margin (NIM), the bank must transition from "flat" interest rates to a **Collateral-Adjusted Pricing Floor**. I recommend implementing a mandatory **15% "Unsecured Surcharge"** for all non-homeowners: this would move **Tier 1 Renters to a 13.24% floor** and **Tier 2 Renters to a ~29.9% target rate**. If a 30% interest rate is deemed uncompetitive or not market-viable, the bank must immediately **cease lending to Tier 2 Renters**, as any rate below this threshold represents a guaranteed erosion of bank capital.
+
 
 
 ---
