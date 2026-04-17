@@ -46,7 +46,7 @@ Successfully audited ETL integrity via a UNION ALL reconciliation, establishing 
 | Raw Source     | 32,581        |
 | Hardened View  | 32,581        |
 
----
+
 ### 1. Data Governance: Imputation Integrity Audit
 I performed a comparative stress test between the Imputed (Gap) and Original (Clean) datasets to detect **Selection Bias**.
 *   **Result:** The 'Gap Group' and 'Clean Group' exhibit statistical parity in default rates (20.67% vs. 21.94%).
@@ -95,6 +95,15 @@ By cross-tabulating **LTI Risk Tiers** against **Home Ownership**, I uncovered a
 *   **The Systemic Threat:** Tier 2 Renters represent the bank's largest "Hidden Fire," with a **39.9% default rate** across a massive **$90M exposure**. This segment is the primary driver of the bank's negative risk-adjusted margin.
 *   **The Collateral Buffer:** Homeownership acts as a profound risk mitigant. Outright Owners in Tier 1 display an ultra-stable **0.95% default rate**, while Tier 2 Mortgage holders default at less than half the rate of their Renter counterparts (16.1% vs 39.9%).
 *   **Policy Pivot:** I proposed a **Dual-Track Underwriting Policy**: Implement a strict **0.30 LTI cap for Renters** to halt losses, while aggressively expanding LTI limits (up to 0.45) for **Homeowners** to capture high-quality, collateral-backed volume.
+
+### **5. Model Failure: The Flaw in Legacy Credit Grades**
+I tested the bank's traditional Credit Grades (A-G) to see if they accurately predicted defaults. The data revealed a massive blind spot:
+
+*   **Debt Beats History:** A "Grade A" customer is traditionally viewed as low-risk. However, if a Grade A borrower takes on too much debt (Tier 3 LTI), their default rate spikes to **66.3%**. 
+*   **The Flaw:** The grading system looks at *past* credit history but ignores *current* debt capacity. An applicant with a perfect history but massive new debt is 18x more likely to default than a Grade A applicant with low debt.
+*   **The Toxic Tail:** Any loan graded D, E, F, or G has a default rate over 50%. These segments are guaranteed money-losers.
+
+**Actionable Outcome:** Recommended a "Hard Stop" rule for the underwriting software. Regardless of a perfect Credit Grade, any applicant with an LTI > 0.40 must be automatically rejected to protect the bank's capital. I also recommended phasing out Grades D-G entirely.
 
 
 ---
