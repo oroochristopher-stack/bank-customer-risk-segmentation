@@ -1,0 +1,13 @@
+risk_tier,person_home_ownership,volume,default_rate_pct,exposure_at_risk
+Tier 1: Low Risk (Prime),RENT,7652,16.06,43135275.0
+Tier 1: Low Risk (Prime),MORTGAGE,7840,9.45,58266475.0
+Tier 1: Low Risk (Prime),OTHER,46,8.7,360650.0
+Tier 1: Low Risk (Prime),OWN,1162,0.95,7280925.0
+Tier 2: Medium Risk (Standard),OTHER,55,41.82,720900.0
+Tier 2: Medium Risk (Standard),RENT,8040,39.91,90043050.0
+Tier 2: Medium Risk (Standard),MORTGAGE,5309,16.12,77848875.0
+Tier 2: Medium Risk (Standard),OWN,1291,11.62,14047450.0
+Tier 3: High Risk (Subprime),RENT,754,100.0,12571575.0
+Tier 3: High Risk (Subprime),OTHER,6,100.0,103425.0
+Tier 3: High Risk (Subprime),MORTGAGE,295,31.53,6047700.0
+Tier 3: High Risk (Subprime),OWN,131,24.43,2005000.0

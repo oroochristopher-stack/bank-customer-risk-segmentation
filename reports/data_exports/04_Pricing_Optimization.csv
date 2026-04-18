@@ -1,0 +1,9 @@
+risk_tier,person_home_ownership,loan_count,current_rate,cost_of_risk,net_risk_margin,recommended_target_rate
+Tier 3: High Risk (Subprime),RENT,754,11.9,70.0,-58.1,72.0
+Tier 3: High Risk (Subprime),OTHER,6,12.24,70.0,-57.76,72.0
+Tier 2: Medium Risk (Standard),OTHER,55,12.88,29.27,-16.39,31.27
+Tier 2: Medium Risk (Standard),RENT,8040,11.7,27.94,-16.24,29.94
+Tier 3: High Risk (Subprime),MORTGAGE,295,11.62,22.07,-10.45,24.07
+Tier 3: High Risk (Subprime),OWN,131,10.78,17.1,-6.32,19.1
+Tier 2: Medium Risk (Standard),MORTGAGE,5309,10.96,11.29,-0.33,13.29
+Tier 1: Low Risk (Prime),RENT,7652,11.14,11.24,-0.1,13.24
