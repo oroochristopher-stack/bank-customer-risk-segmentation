@@ -2,11 +2,11 @@
   <h1>🏦 Bank Portfolio Risk & Customer Segmentation</h1>
   <p><i>Technical Audit of Credit Risk, Basel III Provisioning, and NIM Optimization</i></p>
   
- <img src="reports/charts/00_Executive_Dashboard_Full.png" width="950" alt="Executive Dashboard">
+ <img src="reports/charts/00_Executive_Dashboard_Full.png" width="900" alt="Executive Dashboard">
 
 <p>
  <b>Analyst:</b> Christopher Oroo | <b>Status:</b> Production Ready <br>
- <b>Stack:</b> <code>Google BigQuery (SQL)</code> <code>Python</code> <code>Excel</code> <code>Power Query</code>
+ <b>Stack:</b> <code>Google BigQuery (SQL)</code> <code>Python</code> <code>Excel</code>
 </p>
 </div>
 
