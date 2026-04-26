@@ -1,5 +1,5 @@
 /* 
-    STAGE: 05 - Expected Loss (EL) & Pricing Report
+    STAGE: 06 - Expected Loss (EL) & Pricing Report
     GOAL: Compare Interest Yield vs. Loss Intensity to identify under-priced risk.
 */
 WITH Segment_Risk AS (
