@@ -1,5 +1,5 @@
 /* 
-    STAGE: 04 - Governance Audit (Stress Test)
+    STAGE: 05 - Governance Audit (Stress Test)
     GOAL: Detect Selection Bias (Missing Not At Random) in the 9.56% imputed interest rate gap.
 */
 WITH Integrity_Split AS (
