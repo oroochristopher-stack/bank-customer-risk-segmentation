@@ -55,12 +55,16 @@ I performed a comparative stress test between the Imputed (Gap) and Original (Cl
 ---
 ## IV. Financial Risk Insights
 ### **1. The "Insolvency Frontier"**
+![Insolvency Frontier](reports/charts/02_Insolvency_Frontier_Scatter.png)
+
 The analysis reveals a **"Hard Wall"** for Renters at **0.40 LTI**. Beyond this point, default is a mathematical certainty (100% PD), making the segment un-priceable regardless of interest rates.
 
 ### **2. The Grade-LTI Override**
 **Systemic Weakness:** I discovered that **Grade 'A' borrowers** with High-LTI ratios are **18x riskier** than Grade 'A' borrowers with low debt. This proves that credit history is secondary to current **Debt Capacity**.
 
 ### **3. Financial Modeling: Basel III Provisioning & Yield Audit**
+![NIM Gap](reports/charts/01_NIM_Gap_Chart.png)
+
 **Business Goal:** Compare Interest Yield vs. Cost of Risk (Loss Intensity) to quantify the bank’s capital reserve requirements and identify "Negative Spread" segments.
 
 **The Capital Adequacy Report:**
