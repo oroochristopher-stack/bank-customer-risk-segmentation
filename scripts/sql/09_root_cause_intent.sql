@@ -1,5 +1,5 @@
 /* 
-    STAGE: 08 - Root Cause Analysis (Toxic Intent)
+    STAGE: 09 - Root Cause Analysis (Toxic Intent)
     GOAL: Determine if loan purpose affects the 100% default rate of Tier 3 Renters.
 */
 SELECT 
