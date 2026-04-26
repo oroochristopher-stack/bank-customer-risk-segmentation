@@ -2,7 +2,7 @@
   <h1>🏦 Bank Portfolio Risk & Customer Segmentation</h1>
   <p><i>Technical Audit of Credit Risk, Basel III Provisioning, and NIM Optimization</i></p>
   
- <img src="reports/charts/00_Executive_Dashboard_Full.png" width="950" alt="Executive Dashboard">
+ <img src="reports/charts/.png" width="950" alt="Executive Dashboard">
 
 <p>
  <b>Analyst:</b> Christopher Oroo | <b>Status:</b> Production Ready <br>
