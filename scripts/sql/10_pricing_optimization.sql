@@ -1,5 +1,5 @@
 /* 
-    STAGE: 06 - Pricing Optimization & RAROC 
+    STAGE: 10 - Pricing Optimization & RAROC 
     GOAL: Identify negative-margin segments and calculate break-even + 2% target rates.
 */
 WITH Segment_Profitability AS (
