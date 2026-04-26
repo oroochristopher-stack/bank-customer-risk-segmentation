@@ -1,5 +1,5 @@
 /* 
-    STAGE: 07 - Grade vs. LTI Audit
+    STAGE: 08 - Grade vs. LTI Audit
     GOAL: Test the accuracy of legacy Credit Grades (A-G) against LTI debt ratios.
 */
 SELECT 
