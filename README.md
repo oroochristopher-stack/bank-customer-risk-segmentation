@@ -1,5 +1,5 @@
 # Bank Portfolio Risk & Customer Segmentation
-![Risk Dashboard](reports/charts/Executive_Dashboard.png)
+![Risk Dashboard](reports/charts/00_Executive_Dashboard_Full.png)
 **Analyst:** Christopher Oroo | **Project Status:** Production Ready | **Stack:** Google BigQuery (SQL), Python, Excel
 
 ---
