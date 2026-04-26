@@ -1,5 +1,5 @@
 /* 
-    STAGE: 03 - Data Integrity Audit
+    STAGE: 04 - Data Integrity Audit
     GOAL: Reconcile row counts between the Raw Source and the Hardened View.
     NOTE: A delta of 0 is required for Data Governance compliance.
 */
