@@ -1,4 +1,3 @@
-# scripts/python/data_pipeline.py
 import os
 from utils import execute_safe_query
 from config import PROJECT_ID
