@@ -1,13 +1,21 @@
 <div align="center">
-  <h1>🏦 Bank Portfolio Risk & Customer Segmentation</h1>
-  <p><i>Technical Audit of Credit Risk, Basel III Provisioning, and NIM Optimization</i></p>
-  
- <img src="reports/charts/00_Executive_Dashboard_Full.png" width="900" alt="Executive Dashboard">
+  <h1>🏦 Bank Portfolio Risk & Capital Provisioning Engine</h1>
+  <p><i>End-to-End ETL Pipeline, Basel III Provisioning Logic, and Risk-Adjusted Pricing Strategy</i></p>
 
-<p>
- <b>Analyst:</b> Christopher Oroo | <b>Status:</b> Production Ready <br>
- <b>Stack:</b> <code>Google BigQuery (SQL)</code> <code>Python</code> <code>Excel</code>
-</p>
+  <br>
+<h3> Project Overview</h3>
+  <p style="max-width: 850px; font-size: 1.1em; color: #d1d5db; line-height: 1.6;">
+    This repository hosts a production-ready financial model designed to identify toxic risk concentrations and optimize Net Interest Margin (NIM). By moving from raw, unstructured data to a governed silver-layer view, I have established a system for automated capital provisioning and risk-based underwriting.
+  </p>
+
+  <br>
+
+  <img src="reports/charts/00_Executive_Dashboard_Full.png" width="950" alt="Executive Dashboard">
+
+  <p>
+    <b>Analyst:</b> Christopher Oroo | <b>Status:</b> Production Ready <br>
+    <b>Stack:</b> <code>Google BigQuery (SQL)</code> <code>Python</code> <code>Excel</code>
+  </p>
 </div>
 
 ---
