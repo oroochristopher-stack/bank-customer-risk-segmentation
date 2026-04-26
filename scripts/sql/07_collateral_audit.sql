@@ -1,5 +1,5 @@
 /* 
-    STAGE: 06 - Collateral Audit (Multivariate Risk)
+    STAGE: 07 - Collateral Audit (Multivariate Risk)
     GOAL: Measure the mitigating effect of Home Ownership on LTI-driven Default Rates.
 */
 SELECT 
