@@ -12,12 +12,19 @@
   <img src="reports/charts/00_Executive_Dashboard_Full.png" width="950" alt="Executive Dashboard">
 
   <p>
-    <b>Analyst:</b> Christopher Oroo | <b>Status:</b> Production Ready <br>
-    <b>Stack:</b> <code>Google BigQuery (SQL)</code> | <code>Python</code> | <code>Excel</code>
+    <b>Analyst:</b> Christopher Oroo | <b>Status:</b> Production Ready
   </p>
 </div>
 
+### 🛠️ Technical Stack & Tooling
+*   **Database Engine:** Google BigQuery (Enterprise-grade SQL environment).
+*   **Data Hardening (ETL):** SQL utilizing **Common Table Expressions (CTEs)** for median imputation and robust Feature Engineering.
+*   **Forensic Auditing & QA:** Python (Pandas) for statistical validation, **Unit Testing** via side-by-side audit tables, and MAR (Missing At Random) testing.
+*   **Accounting Logic:** IFRS 9 / Basel III mathematical modeling for Expected Credit Loss (ECL).
+*   **Business Intelligence:** Microsoft Excel & Power Query for automated, "One-Click" executive reporting.
+
 ---
+
 
 ##  Table of Contents
 
