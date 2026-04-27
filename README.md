@@ -1,6 +1,6 @@
 <div align="center">
   <h1>🏦 Bank Portfolio Risk & Capital Provisioning Engine</h1>
-  <p><i>End-to-End ETL Pipeline, Basel III Provisioning Logic, and Risk-Adjusted Pricing Strategy</i></p>
+ <p><i>End-to-End ETL Pipeline, IFRS 9 Expected Credit Loss (ECL) Modeling, and Risk-Adjusted Pricing Strategy</i></p>
 
   <br>
 <h3> Project Overview</h3>
@@ -110,7 +110,7 @@ To restore the Net Interest Margin (NIM) and protect core capital, I recommend a
 **1. Elimination & Provisions (Non-Viable Segments)**
 *   **Origination Moratorium:** Immediately halt all lending to Tier 3 Renters. Reclassify the $12.5M exposure from "Expected Loss" to "Realized Loss" (Write-off) to reflect true liquidity.
 *   **Forensic Fraud Audit:** Mandate an immediate investigation into the 75 "Home Improvement" Renter loans for misrepresentation at origin.
-*   **ECL Adjustment:** Increase IFRS 9 / CECL provisions for the Tier 2 Renter segment ($90M exposure) to account for the discovered 39.9% default rate.
+*   **ECL Adjustment:** Increase IFRS 9 provisions for the Tier 2 Renter segment ($90M exposure) to account for the discovered 39.9% default rate.
 
 **2. Risk Filtering (Underwriting Migration Control)**
 *   **LTI "Circuit Breaker":** Implement an automated Hard LTI Cap of 0.30 for all unsecured Renter applications.
