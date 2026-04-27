@@ -77,16 +77,16 @@ By cross-tabulating LTI Risk Tiers against Home Ownership, I isolated severe ris
 *   **The Systemic Threat:** Tier 2 Renters are the bank's largest "Hidden Fire," carrying a 39.9% default rate across $90M in exposure.
 *   **The Collateral Buffer:** Outright Owners in Tier 1 display an ultra-stable 0.95% PD. Tier 2 Mortgage holders default at less than half the rate of their Renter counterparts (16.1% vs 39.9%).
 
-### 4. Root Cause Analysis: The "Intent" Illusion & Occupancy Fraud
+### 4. Root Cause Analysis: The "Intent" Illusion 
 Isolating Tier 3 Renters exposed a systemic failure where debt-stress overrides loan intent. Once an LTI of ~0.47 is reached, mathematical capacity to repay breaks completely.
 
 | Loan Intent | Volume | Default Rate (PD) | Avg. LTI | Status |
 | :--- | :---: | :---: | :---: | :--- |
 | Medical / Debt Consolidation | 301 | 100.00% | ~0.470 | 🔴 Toxic |
-| **Home Improvement** | **75** | **100.00%** | **0.478** | ⚠️ **Potential Fraud** |
+| **Home Improvement** | **75** | **100.00%** | **0.478** | **Potential Fraud** |
 | Education / Venture | 254 | 100.00% | 0.472 | 🔴 Toxic |
 
-*   **The Fraud Alert:** 75 "Home Improvement" loans were issued to Renters resulting in total loss. Statistically, tenants do not invest an average of $17,600 into unowned properties. This indicates a severe breakdown in **Verification of Assets (VOA)** and likely occupancy fraud.
+*   **The "Home Improvement" Paradox (Fraud/Misrepresentation Alert):** I identified 75 "Home Improvement" loans issued to Renters that resulted in a 100% loss. While this intent may represent legitimate furniture/appliance financing, the high loan values (~$17.6k) coupled with a 100% default rate suggests a breakdown in **Verification of Assets (VOA)**. Whether this represents occupancy misrepresentation or aggressive consumption, the data indicates that this loan category is functionally un-priceable for the Renter demographic.
 
 ### 5. Financial Modeling: Basel III Provisioning & Yield Audit
 ![NIM Gap](reports/charts/01_NIM_Gap_Chart.png)
