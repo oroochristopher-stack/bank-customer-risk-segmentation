@@ -28,7 +28,7 @@
 
 **Financial Impact:**
 *   **Identified $12.5M in "Toxic Exposure":** Confirmed a 100% historical default correlation for high-LTI Renters.
-*   **Capital Release:** Proposed a 0.30 LTI Cap to trigger a **$50M+ Long-Term Capital Release** as toxic stock runs off the balance sheet.
+*   **Systemic Loss Avoidance:** Proposed a 0.30 LTI Cap to stop the cycle of toxic originations, protecting future liquidity from recurring $12.5M annual write-offs.
 *   **NIM Restoration:** Recommended a **14.5% interest rate floor** for Prime Renters to flip a negative Net Risk Margin into profitability.
 
 ---
@@ -88,10 +88,10 @@ Isolating Tier 3 Renters exposed a systemic failure where debt-stress overrides 
 
 *   **The "Home Improvement" Paradox (Fraud/Misrepresentation Alert):** I identified 75 "Home Improvement" loans issued to Renters that resulted in a 100% loss. While this intent may represent legitimate furniture/appliance financing, the high loan values (~$17.6k) coupled with a 100% default rate suggests a breakdown in **Verification of Assets (VOA)**. Whether this represents occupancy misrepresentation or aggressive consumption, the data indicates that this loan category is functionally un-priceable for the Renter demographic.
 
-### 5. Financial Modeling: Basel III Provisioning & Yield Audit
+### 5. Financial Modeling: IFRS 9 Provisioning & Yield Audit
 ![NIM Gap](reports/charts/01_NIM_Gap_Chart.png)
 
-**Business Goal:** Quantify capital reserve requirements and identify "Negative Spread" segments by comparing Interest Yield vs. Expected Credit Loss (ECL).
+**Business Goal:** Quantify capital reserve requirements and identify "Negative Spread" segments by comparing Interest Yield vs. Expected Credit Loss (ECL) under IFRS 9 accounting standards.
 
 | Risk Tier | Total Exposure | PD % | Required Reserves | Avg. Yield | Loss Intensity |
 | :--- | :--- | :---: | :---: | :---: | :---: |
@@ -108,7 +108,7 @@ Isolating Tier 3 Renters exposed a systemic failure where debt-stress overrides 
 To restore the Net Interest Margin (NIM) and protect core capital, I recommend a three-pillar remediation strategy:
 
 **1. Elimination & Provisions (Non-Viable Segments)**
-*   **Origination Moratorium:** Immediately halt all lending to Tier 3 Renters. Reclassify the $12.5M exposure from "Expected Loss" to "Realized Loss" (Write-off) to reflect true liquidity.
+*   **Origination Moratorium:** Immediately halt all lending to Tier 3 Renters to preserve future capital. Reclassify the $12.5M exposure from "Expected Loss" to "Realized Loss" (Write-off) to reflect true liquidity.
 *   **Forensic Fraud Audit:** Mandate an immediate investigation into the 75 "Home Improvement" Renter loans for misrepresentation at origin.
 *   **ECL Adjustment:** Increase IFRS 9 provisions for the Tier 2 Renter segment ($90M exposure) to account for the discovered 39.9% default rate.
 
@@ -132,3 +132,14 @@ Organized via the **Data Medallion Architecture**:
 **To Reproduce Results:**
 1. Configure `scripts/python/config.py` with your GCP Project ID.
 2. Execute `notebook/Risk_Pipeline.ipynb` to deploy the **Governed View Layer** and generate financial reports.
+
+---
+## V. Technical Appendix & Project Architecture
+**Data Pipeline:**
+1. **BigQuery (SQL):** Multi-stage ETL to harden 32k raw records into a Governed Silver View.
+2. **Python (Pandas):** Forensic auditing, LTI binning, and IFRS 9 mathematical modeling.
+3. **Excel (Power Query):** Automated ingestion of BigQuery exports for executive visualization.
+
+**The Analyst's Verdict:**
+By integrating debt-capacity metrics (LTI) with legacy behavioral data, I have demonstrated that a bank's insolvency risk is often hidden in its standard-tier renter volume. While the Tier 3 Renter segment represents a realized loss, the implementation of a 0.30 LTI "Hard-Gate" serves as a critical Capital Preservation measure. This project provides the roadmap for significant future loss avoidance and a full restoration of the bank's Net Interest Margin.
+
