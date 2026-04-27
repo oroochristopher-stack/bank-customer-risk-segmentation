@@ -1,30 +1,49 @@
 <div align="center">
   <h1>🏦 Bank Portfolio Risk & Capital Provisioning Engine</h1>
- <p><i>End-to-End ETL Pipeline, IFRS 9 Expected Credit Loss (ECL) Modeling, and Risk-Adjusted Pricing Strategy</i></p>
-
+  <p><i>End-to-End ETL Pipeline, IFRS 9 Expected Credit Loss (ECL) Modeling, and Risk-Adjusted Pricing Strategy</i></p>
   <br>
-<h3> Project Overview</h3>
+
+  <h3>Project Overview</h3>
   <p style="max-width: 850px; font-size: 1.1em; color: #d1d5db; line-height: 1.6;">
     This repository hosts a production-ready financial model designed to identify toxic risk concentrations and optimize Net Interest Margin (NIM). By moving from raw, unstructured data to a governed silver-layer view, I have established a system for automated capital provisioning and risk-based underwriting.
   </p>
-
   <br>
 
   <img src="reports/charts/00_Executive_Dashboard_Full.png" width="950" alt="Executive Dashboard">
 
   <p>
     <b>Analyst:</b> Christopher Oroo | <b>Status:</b> Production Ready <br>
-    <b>Stack:</b> <code>Google BigQuery (SQL)</code> <code>Python</code> <code>Excel</code>
+    <b>Stack:</b> <code>Google BigQuery (SQL)</code> | <code>Python</code> | <code>Excel</code>
   </p>
 </div>
 
 ---
 
+##  Table of Contents
+
+1. [Executive Summary: The Bottom Line](#i-executive-summary-the-bottom-line)
+2. [Analytical Infrastructure & Governance](#ii-analytical-infrastructure--governance)
+3. [Financial Risk Insights](#iii-financial-risk-insights)
+4. [The CRO Action Plan: Strategic Recommendations](#iv-the-cro-action-plan-strategic-recommendations)
+5. [Repository Structure & Reproducibility](#v-repository-structure--reproducibility)
+6. [Technical Appendix & Project Architecture](#vi-technical-appendix--project-architecture)
+
+   
+
+> Glossary of Key Banking Terms Used in this Report:
+> *   **LTI (Loan-to-Income):** The percentage of a borrower's income required to service the loan.
+> *   **PD (Probability of Default):** The historical likelihood that a borrower will fail to repay.
+> *   **EAD (Exposure at Default):** The total dollar amount at risk.
+> *   **ECL (Expected Credit Loss):** An IFRS 9 accounting standard calculating required capital reserves (PD × EAD × LGD).
+> *   **NIM (Net Interest Margin):** The profitability metric; Interest Earned minus the Cost of Risk.
+> *   **MAR (Missing At Random):** A statistical proof that missing data does not hide systemic bias.
+
+---
 
 ## I. Executive Summary: The Bottom Line
 **Problem:** The bank is currently operating with an **18% capital charge** and realizing a loss on **100% of its Tier 3 Renter segment**. The legacy credit grading system fails to account for **Debt Capacity**, leading to severe under-pricing of portfolio risk and a degraded Net Interest Margin (NIM).
 
-**Strategy:** Architected a tri-tier risk framework in Google BigQuery, deploying a **Governed View Layer** to resolve a 9.56% data documentation gap, and engineered high-signal predictive metrics (e.g., Loan-to-Income [LTI] Ratios).
+**Strategy:** Architected a tri-tier risk framework in Google BigQuery, deploying a **Governed View Layer** to resolve a 9.56% data documentation gap, and engineered high-signal predictive metrics (e.g., LTI Ratios).
 
 **Financial Impact:**
 *   **Identified $12.5M in "Toxic Exposure":** Confirmed a 100% historical default correlation for high-LTI Renters.
@@ -39,16 +58,23 @@
 *   **Security:** Architected a **Python-to-BigQuery bridge** utilizing tokenized OAuth 2.0.
 *   **Cost Control:** Implemented a **50MB Safety Guardrail** and mandatory **Dry Run Audits** to ensure query cost-efficiency.
 
-### 2. Data Triage, Hardening & Integrity Audit
-Anchored the ETL pipeline against a raw baseline of 32,581 loan records. Successfully audited ETL integrity via a `UNION ALL` reconciliation, establishing a **1:1 row count parity** between Raw and Hardened assets.
+### 2. Data Triage & Imputation Audit
+To ensure the model was mathematically sound, I conducted a transparency audit on the 'Silver' layer to quantify data quality gaps. 
 
-**Data Health & Imputation Report:**
 | Metric | Total Loans | Null Interest Rows | Null Employment Rows | % Interest Gap |
 | :--- | :---: | :---: | :---: | :---: |
 | **Volume** | 32,581 | 3,116 | 895 | **9.56%** |
 
 *   **Imputation Integrity:** Conducted a comparative stress test between the Imputed (Gap) and Original (Clean) datasets. Statistical parity in Default Rates (20.67% vs. 21.94%) validates that the missing data is **Missing At Random (MAR)**, confirming grade-level median imputation as a **non-biasing strategy**.
 *   **Strategic Recommendation:** Data Operations must investigate the source extraction pipeline. A 9.56% documentation failure rate represents an operational risk that must be remediated at the root.
+
+### 3. Operational Reconciliation: ETL Integrity
+Anchored the ETL pipeline against a raw baseline of 32,581 loan records. Successfully audited ETL integrity via a `UNION ALL` reconciliation, establishing a **1:1 row count parity** between Raw and Hardened assets.
+
+| Data Source | Total Records | Status |
+| :--- | :---: | :---: |
+| Raw Source | 32,581 |  Baseline |
+| Hardened View | 32,581 |  Zero Data Loss |
 
 ---
 
@@ -82,11 +108,11 @@ Isolating Tier 3 Renters exposed a systemic failure where debt-stress overrides 
 
 | Loan Intent | Volume | Default Rate (PD) | Avg. LTI | Status |
 | :--- | :---: | :---: | :---: | :--- |
-| Medical / Debt Consolidation | 301 | 100.00% | ~0.470 | 🔴 Toxic |
+| Medical / Debt Cons. | 301 | 100.00% | ~0.470 | 🔴 Toxic |
 | **Home Improvement** | **75** | **100.00%** | **0.478** | **Potential Fraud** |
 | Education / Venture | 254 | 100.00% | 0.472 | 🔴 Toxic |
 
-*   **The "Home Improvement" Paradox (Fraud/Misrepresentation Alert):** I identified 75 "Home Improvement" loans issued to Renters that resulted in a 100% loss. While this intent may represent legitimate furniture/appliance financing, the high loan values (~$17.6k) coupled with a 100% default rate suggests a breakdown in **Verification of Assets (VOA)**. Whether this represents occupancy misrepresentation or aggressive consumption, the data indicates that this loan category is functionally un-priceable for the Renter demographic.
+*   **The "Home Improvement" Paradox (Fraud/Misrepresentation Alert):** I identified 75 "Home Improvement" loans issued to Renters that resulted in a 100% loss. While this intent may represent legitimate furniture financing, the high loan values (~$17.6k) coupled with a 100% default rate suggests a breakdown in **Verification of Assets (VOA)**. Whether this represents occupancy misrepresentation or aggressive consumption, this category is functionally un-priceable.
 
 ### 5. Financial Modeling: IFRS 9 Provisioning & Yield Audit
 ![NIM Gap](reports/charts/01_NIM_Gap_Chart.png)
@@ -134,12 +160,11 @@ Organized via the **Data Medallion Architecture**:
 2. Execute `notebook/Risk_Pipeline.ipynb` to deploy the **Governed View Layer** and generate financial reports.
 
 ---
-## V. Technical Appendix & Project Architecture
-**Data Pipeline:**
+## VI. Technical Appendix & Project Conclusion
+**Data Pipeline Overview:**
 1. **BigQuery (SQL):** Multi-stage ETL to harden 32k raw records into a Governed Silver View.
 2. **Python (Pandas):** Forensic auditing, LTI binning, and IFRS 9 mathematical modeling.
 3. **Excel (Power Query):** Automated ingestion of BigQuery exports for executive visualization.
 
 **The Analyst's Verdict:**
 By integrating debt-capacity metrics (LTI) with legacy behavioral data, I have demonstrated that a bank's insolvency risk is often hidden in its standard-tier renter volume. While the Tier 3 Renter segment represents a realized loss, the implementation of a 0.30 LTI "Hard-Gate" serves as a critical Capital Preservation measure. This project provides the roadmap for significant future loss avoidance and a full restoration of the bank's Net Interest Margin.
-
