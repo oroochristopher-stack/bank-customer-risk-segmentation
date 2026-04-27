@@ -35,7 +35,7 @@
 5. [Repository Structure & Reproducibility](#v-repository-structure--reproducibility)
 6. [Technical Appendix & Project Architecture](#vi-technical-appendix--project-conclusion)
 
-   VI. Technical Appendix & Project Conclusion
+
 
 > Glossary of Key Banking Terms Used in this Report:
 > *   **LTI (Loan-to-Income):** The percentage of a borrower's income required to service the loan.
