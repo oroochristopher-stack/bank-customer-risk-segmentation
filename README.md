@@ -1,43 +1,38 @@
 <div align="center">
-  <h1>🏦 Bank Portfolio Risk & Capital Provisioning Engine</h1>
-  <p><i>End-to-End ETL Pipeline, IFRS 9 Expected Credit Loss (ECL) Modeling, and Risk-Adjusted Pricing Strategy</i></p>
+  <h1>🏦 Credit Risk Segmentation & Expected Loss Analysis (SQL + BigQuery)</h1>
+  <p><i>End-to-End ETL Pipeline, Expected Loss approximation using PD × Exposure × LGD assumption, and Risk-Adjusted Pricing Strategy</i></p>
   <br>
 
   <h3>Project Overview</h3>
   <p style="max-width: 850px; font-size: 1.1em; color: #d1d5db; line-height: 1.6;">
-    This repository hosts a production-ready financial model designed to identify toxic risk concentrations and optimize Net Interest Margin (NIM). By moving from raw, unstructured data to a governed silver-layer view, I have established a system for automated capital provisioning and risk-based underwriting.
+    This project analyzes a loan portfolio to identify high-risk customer segments and estimate expected credit losses. <br><br>
+    The goal is to answer three key questions:
+    <br>- Which borrowers are most likely to default?
+    <br>- Where is the bank underpricing risk?
+    <br>- What actions can reduce potential losses?
+    <br><br>
+    Using SQL (BigQuery) and Python, I built a pipeline to clean the data, engineer risk features, segment customers, and estimate expected loss.
   </p>
   <br>
 
   <img src="reports/charts/00_Executive_Dashboard_Full.png" width="950" alt="Executive Dashboard">
 
   <p>
-    <b>Analyst:</b> Christopher Oroo | <b>Status:</b> Production Ready
+    <b>Analyst:</b> Christopher Oroo | <b>Status:</b> Completed
   </p>
 </div>
 
-### 🛠️ Technical Stack & Tooling
-*   **Database Engine:** Google BigQuery (Enterprise-grade SQL environment).
-*   **Data Hardening (ETL):** SQL utilizing **Common Table Expressions (CTEs)** for median imputation and robust Feature Engineering.
-*   **Forensic Auditing & QA:** Python (Pandas) for statistical validation, **Unit Testing** via side-by-side audit tables, and MAR (Missing At Random) testing.
-*   **Accounting Logic:** IFRS 9 / Basel III mathematical modeling for Expected Credit Loss (ECL).
-*   **Business Intelligence:** Microsoft Excel & Power Query for automated, "One-Click" executive reporting.
-
 ---
 
-
-##  Table of Contents
-
+## 📑 Table of Contents
 1. [Executive Summary: The Bottom Line](#i-executive-summary-the-bottom-line)
-2. [Analytical Infrastructure & Governance](#ii-analytical-infrastructure--governance)
-3. [Financial Risk Insights](#iii-financial-risk-insights)
-4. [The CRO Action Plan: Strategic Recommendations](#iv-the-cro-action-plan-strategic-recommendations)
-5. [Repository Structure & Reproducibility](#v-repository-structure--reproducibility)
-6. [Technical Appendix & Project Architecture](#vi-technical-appendix--project-conclusion)
+2. [Financial Risk Insights](#ii-financial-risk-insights)
+3. [The CRO Action Plan: Strategic Recommendations](#iii-the-cro-action-plan-strategic-recommendations)
+4. [Technical Implementation](#iv-technical-implementation)
+5. [Reproducibility](#v-reproducibility)
+6. [Limitations & Assumptions](#vi-limitations--assumptions)
 
-
-
-> Glossary of Key Banking Terms Used in this Report:
+> **📖 Glossary of Key Banking Terms Used in this Report:**
 > *   **LTI (Loan-to-Income):** The percentage of a borrower's income required to service the loan.
 > *   **PD (Probability of Default):** The historical likelihood that a borrower will fail to repay.
 > *   **EAD (Exposure at Default):** The total dollar amount at risk.
@@ -53,39 +48,13 @@
 **Strategy:** Architected a tri-tier risk framework in Google BigQuery, deploying a **Governed View Layer** to resolve a 9.56% data documentation gap, and engineered high-signal predictive metrics (e.g., LTI Ratios).
 
 **Financial Impact:**
-*   **Identified $12.5M in "Toxic Exposure":** Confirmed a 100% historical default correlation for high-LTI Renters.
+*   **Identified $12.5M in "Toxic Exposure":** Confirmed a 100% historical default rate within this sample for high-LTI Renters.
 *   **Systemic Loss Avoidance:** Proposed a 0.30 LTI Cap to stop the cycle of toxic originations, protecting future liquidity from recurring $12.5M annual write-offs.
 *   **NIM Restoration:** Recommended a **14.5% interest rate floor** for Prime Renters to flip a negative Net Risk Margin into profitability.
 
 ---
 
-## II. Analytical Infrastructure & Governance
-### 1. Cloud-Native Environment
-*   **Platform:** Google BigQuery (Simulating a multi-million row enterprise environment).
-*   **Security:** Architected a **Python-to-BigQuery bridge** utilizing tokenized OAuth 2.0.
-*   **Cost Control:** Implemented a **50MB Safety Guardrail** and mandatory **Dry Run Audits** to ensure query cost-efficiency.
-
-### 2. Data Triage & Imputation Audit
-To ensure the model was mathematically sound, I conducted a transparency audit on the 'Silver' layer to quantify data quality gaps. 
-
-| Metric | Total Loans | Null Interest Rows | Null Employment Rows | % Interest Gap |
-| :--- | :---: | :---: | :---: | :---: |
-| **Volume** | 32,581 | 3,116 | 895 | **9.56%** |
-
-*   **Imputation Integrity:** Conducted a comparative stress test between the Imputed (Gap) and Original (Clean) datasets. Statistical parity in Default Rates (20.67% vs. 21.94%) validates that the missing data is **Missing At Random (MAR)**, confirming grade-level median imputation as a **non-biasing strategy**.
-*   **Strategic Recommendation:** Data Operations must investigate the source extraction pipeline. A 9.56% documentation failure rate represents an operational risk that must be remediated at the root.
-
-### 3. Operational Reconciliation: ETL Integrity
-Anchored the ETL pipeline against a raw baseline of 32,581 loan records. Successfully audited ETL integrity via a `UNION ALL` reconciliation, establishing a **1:1 row count parity** between Raw and Hardened assets.
-
-| Data Source | Total Records | Status |
-| :--- | :---: | :---: |
-| Raw Source | 32,581 |  Baseline |
-| Hardened View | 32,581 |  Zero Data Loss |
-
----
-
-## III. Financial Risk Insights
+## II. Financial Risk Insights
 
 ### 1. Model Failure: The Flaw in Legacy Credit Grades
 Testing the bank's traditional Credit Grades (A-G) revealed a massive underwriting blind spot: **Debt beats historical behavior.**
@@ -95,7 +64,7 @@ Testing the bank's traditional Credit Grades (A-G) revealed a massive underwriti
 ### 2. The "Insolvency Frontier"
 ![Insolvency Frontier](reports/charts/02_Insolvency_Frontier_Scatter.png)
 
-The analysis reveals a **"Hard Wall"** for Renters at **0.40 LTI**. Beyond this threshold, Probability of Default (PD) becomes a mathematical certainty (100%), making the segment un-priceable regardless of interest yield.
+The analysis reveals a **"Hard Wall"** for Renters at **0.40 LTI**. Beyond this threshold, Probability of Default (PD) becomes extremely high within this dataset, making the segment un-priceable regardless of interest yield.
 
 ### 3. Multivariate Risk Discovery: The "Collateral Buffer"
 By cross-tabulating LTI Risk Tiers against Home Ownership, I isolated severe risk concentrations alongside hyper-stable "Safe Harbors."
@@ -116,10 +85,10 @@ Isolating Tier 3 Renters exposed a systemic failure where debt-stress overrides 
 | Loan Intent | Volume | Default Rate (PD) | Avg. LTI | Status |
 | :--- | :---: | :---: | :---: | :--- |
 | Medical / Debt Cons. | 301 | 100.00% | ~0.470 | 🔴 Toxic |
-| **Home Improvement** | **75** | **100.00%** | **0.478** | **Potential Fraud** |
+| **Home Improvement** | **75** | **100.00%** | **0.478** | **potential misclassification** |
 | Education / Venture | 254 | 100.00% | 0.472 | 🔴 Toxic |
 
-*   **The "Home Improvement" Paradox (Fraud/Misrepresentation Alert):** I identified 75 "Home Improvement" loans issued to Renters that resulted in a 100% loss. While this intent may represent legitimate furniture financing, the high loan values (~$17.6k) coupled with a 100% default rate suggests a breakdown in **Verification of Assets (VOA)**. Whether this represents occupancy misrepresentation or aggressive consumption, this category is functionally un-priceable.
+*   **The "Home Improvement" Paradox (Abnormal behavior Alert):** I identified 75 "Home Improvement" loans issued to Renters that resulted in a 100% loss. While this intent may represent legitimate furniture financing, the high loan values (~$17.6k) coupled with a 100% default rate suggests a breakdown in **Verification of Assets (VOA)**. Whether this represents occupancy misrepresentation or aggressive consumption, this category is functionally un-priceable.
 
 ### 5. Financial Modeling: IFRS 9 Provisioning & Yield Audit
 ![NIM Gap](reports/charts/01_NIM_Gap_Chart.png)
@@ -137,7 +106,7 @@ Isolating Tier 3 Renters exposed a systemic failure where debt-stress overrides 
 
 ---
 
-## IV. The CRO Action Plan: Strategic Recommendations
+## III. The CRO Action Plan: Strategic Recommendations
 To restore the Net Interest Margin (NIM) and protect core capital, I recommend a three-pillar remediation strategy:
 
 **1. Elimination & Provisions (Non-Viable Segments)**
@@ -155,23 +124,49 @@ To restore the Net Interest Margin (NIM) and protect core capital, I recommend a
 
 ---
 
-## V. Repository Structure & Reproducibility
-Organized via the **Data Medallion Architecture**:
-*   `scripts/sql/`: Pure logic for data hardening, segmentation, and provisioning.
-*   `scripts/python/`: The automation engine, configuration, and cost-control gateway.
-*   `notebook/`: The full analytical narrative and "Head-to-Tail" execution.
-*   `reports/`: Houses the Excel Decision Sandbox and visual risk heatmaps.
+## IV. Technical Implementation 
 
-**To Reproduce Results:**
-1. Configure `scripts/python/config.py` with your GCP Project ID.
-2. Execute `notebook/Risk_Pipeline.ipynb` to deploy the **Governed View Layer** and generate financial reports.
+**Data Pipeline**
+*   Built using **Google BigQuery (SQL)** and **Python (Pandas)**
+*   Structured using layered transformations:
+    *   **Raw Layer:** Original dataset
+    *   **Clean Layer:** Missing value handling and type correction
+    *   **Feature Layer:** Derived variables (LTI, default history)
+    *   **Segmentation Layer:** Risk tier classification
+
+**Data Quality Checks**
+*   Verified row-level integrity between raw and processed data (no data loss)
+*   Identified ~9.5% missing values in key variables (interest rate, employment length)
+*   Applied group-based imputation (by loan grade)
+*   Compared default rates before/after imputation → no material distortion observed
+
+**Key Engineered Features**
+*   **Loan-to-Income (LTI):** Proxy for debt burden
+*   **Default History Flag:** Captures prior credit behavior
+*   **Risk Tier (Derived):**
+    *   Tier 1: Low risk
+    *   Tier 2: Moderate risk
+    *   Tier 3: High risk
+
+**Modeling Approach**
+*   Estimated Expected Loss using: `Expected Loss ≈ PD × Exposure × LGD`
+*   PD derived empirically from dataset
+*   LGD assumed constant (simplification)
 
 ---
-## VI. Technical Appendix & Project Conclusion
-**Data Pipeline Overview:**
-1. **BigQuery (SQL):** Multi-stage ETL to harden 32k raw records into a Governed Silver View.
-2. **Python (Pandas):** Forensic auditing, LTI binning, and IFRS 9 mathematical modeling.
-3. **Excel (Power Query):** Automated ingestion of BigQuery exports for executive visualization.
 
-**The Analyst's Verdict:**
-By integrating debt-capacity metrics (LTI) with legacy behavioral data, I have demonstrated that a bank's insolvency risk is often hidden in its standard-tier renter volume. While the Tier 3 Renter segment represents a realized loss, the implementation of a 0.30 LTI "Hard-Gate" serves as a critical Capital Preservation measure. This project provides the roadmap for significant future loss avoidance and a full restoration of the bank's Net Interest Margin.
+## V. Reproducibility
+
+To replicate this analysis:
+1. Load dataset into BigQuery
+2. Run SQL scripts in `/scripts/sql/` folder (in order)
+3. Execute Python notebook for validation & exports
+4. Use exported CSV files for dashboard creation (Excel/Power BI)
+
+---
+
+## VI. Limitations & Assumptions
+*   **PD Estimation:** Based on historical averages (no predictive model yet)
+*   **LGD:** Assumed constant (not modeled due to lack of recovery data)
+*   **Correlation Effects:** Variables treated independently
+*   **Dataset Scope:** Synthetic dataset, results illustrate methodology, not real-world portfolio behavior
