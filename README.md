@@ -24,7 +24,7 @@
 
 ---
 
-## 📑 Table of Contents
+##  Table of Contents
 1. [Executive Summary: The Bottom Line](#i-executive-summary-the-bottom-line)
 2. [Financial Risk Insights](#ii-financial-risk-insights)
 3. [The CRO Action Plan: Strategic Recommendations](#iii-the-cro-action-plan-strategic-recommendations)
@@ -32,7 +32,7 @@
 5. [Reproducibility](#v-reproducibility)
 6. [Limitations & Assumptions](#vi-limitations--assumptions)
 
-> **📖 Glossary of Key Banking Terms Used in this Report:**
+> ** Glossary of Key Banking Terms Used in this Report:**
 > *   **LTI (Loan-to-Income):** The percentage of a borrower's income required to service the loan.
 > *   **PD (Probability of Default):** The historical likelihood that a borrower will fail to repay.
 > *   **EAD (Exposure at Default):** The total dollar amount at risk.
